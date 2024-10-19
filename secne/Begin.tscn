@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bivdploq63aua"]
+
+[ext_resource type="Script" path="res://script/begin.gd" id="1_jfb6f"]
+[ext_resource type="PackedScene" uid="uid://cggxg12ahg3q" path="res://secne/Background.tscn" id="1_ucmdh"]
+[ext_resource type="Texture2D" uid="uid://pma271t0jf0w" path="res://picture/instructions.png" id="2_52kp6"]
+[ext_resource type="Texture2D" uid="uid://bqny38edgmgsb" path="res://picture/label_get_ready.png" id="4_3emip"]
+
+[node name="begin" type="Node2D"]
+script = ExtResource("1_jfb6f")
+
+[node name="bk" type="Node2D" parent="."]
+
+[node name="background" parent="bk" instance=ExtResource("1_ucmdh")]
+position = Vector2(144, 256)
+scale = Vector2(2, 2)
+
+[node name="background2" parent="bk" instance=ExtResource("1_ucmdh")]
+position = Vector2(432, 256)
+scale = Vector2(2, 2)
+
+[node name="Instructions" type="Sprite2D" parent="."]
+position = Vector2(144, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("2_52kp6")
+
+[node name="LabelFlappyBird" type="Sprite2D" parent="."]
+position = Vector2(144, 80)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_3emip")

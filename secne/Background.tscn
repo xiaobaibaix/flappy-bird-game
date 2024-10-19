@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cggxg12ahg3q"]
+
+[ext_resource type="Texture2D" uid="uid://ce0pigdrja2i5" path="res://picture/background_day.png" id="1_5vmfl"]
+[ext_resource type="Script" path="res://script/background.gd" id="1_nfohk"]
+[ext_resource type="Texture2D" uid="uid://cp7byj2r57s4d" path="res://picture/ground.png" id="2_b5k6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g505p"]
+
+[node name="background" type="Node2D"]
+script = ExtResource("1_nfohk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5vmfl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 100)
+
+[node name="Ground" type="Sprite2D" parent="StaticBody2D"]
+z_index = 10
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_b5k6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(10.04, 3.32)
+shape = SubResource("RectangleShape2D_g505p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(7.2, 12.8)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

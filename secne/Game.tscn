@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bblfuyo7tw301"]
+
+[ext_resource type="Script" path="res://script/game.gd" id="1_e8qij"]
+[ext_resource type="PackedScene" uid="uid://c4cijpu0iim0s" path="res://secne/Bird.tscn" id="2_cghkk"]
+[ext_resource type="PackedScene" uid="uid://cggxg12ahg3q" path="res://secne/Background.tscn" id="3_jkv6t"]
+[ext_resource type="PackedScene" uid="uid://cgu7n644v7tvc" path="res://secne/Pip.tscn" id="4_21a5m"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_e8qij")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(144, 256)
+
+[node name="bird" parent="." instance=ExtResource("2_cghkk")]
+z_index = 20
+position = Vector2(144, 206)
+
+[node name="bk" type="Node2D" parent="."]
+position = Vector2(144, 256)
+
+[node name="background" parent="bk" instance=ExtResource("3_jkv6t")]
+scale = Vector2(2, 2)
+
+[node name="background2" parent="bk" instance=ExtResource("3_jkv6t")]
+position = Vector2(288, 0)
+scale = Vector2(2, 2)
+
+[node name="pips" type="Node2D" parent="bk"]
+
+[node name="Pip" parent="bk/pips" instance=ExtResource("4_21a5m")]
+position = Vector2(180, -44)
+
+[node name="Pip2" parent="bk/pips" instance=ExtResource("4_21a5m")]
+position = Vector2(250, -12)
+
+[node name="Pip3" parent="bk/pips" instance=ExtResource("4_21a5m")]
+position = Vector2(324, -90)
+
+[node name="Pip4" parent="bk/pips" instance=ExtResource("4_21a5m")]
+position = Vector2(396, -8)
+
+[node name="Pip5" parent="bk/pips" instance=ExtResource("4_21a5m")]
+position = Vector2(468, -35)

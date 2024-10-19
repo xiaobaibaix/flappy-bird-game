@@ -1,0 +1,14 @@
+TextureRect
+Sprite2D
+Label
+TextureButton
+Node2D
+Node
+Button
+AnimatedSprite2D
+AudioStreamPlayer
+VisibleOnScreenNotifier2D
+VisibleOnScreenEnabler2D
+Camera2D
+CollisionShape2D
+StaticBody2D

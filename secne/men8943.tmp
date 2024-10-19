@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://35q165mhbue4"]
+
+[ext_resource type="Script" path="res://secne/menu.gd" id="1_bklri"]
+[ext_resource type="PackedScene" uid="uid://cggxg12ahg3q" path="res://secne/Background.tscn" id="1_oj1b4"]
+[ext_resource type="Texture2D" uid="uid://cdicfl71ru55o" path="res://picture/panel_score.png" id="2_fp3jl"]
+[ext_resource type="Texture2D" uid="uid://cth4cic752ivu" path="res://picture/button_score_pressed.png" id="3_6hn1m"]
+[ext_resource type="Texture2D" uid="uid://dvwso7vb4eo08" path="res://picture/button_score_normal.png" id="4_aotj2"]
+[ext_resource type="Texture2D" uid="uid://bwkitbvkc4aww" path="res://picture/button_share.png" id="4_jjoe6"]
+[ext_resource type="Texture2D" uid="uid://cv24ihvc5u5aa" path="res://picture/medal_bronze.png" id="4_u15tk"]
+[ext_resource type="Texture2D" uid="uid://cq77pp1uamdg2" path="res://picture/number_large_0.png" id="5_c6evo"]
+[ext_resource type="Texture2D" uid="uid://c5ew8bdho0vso" path="res://picture/button_menu.png" id="5_dsvyr"]
+
+[node name="menu" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_bklri")
+
+[node name="background" parent="." instance=ExtResource("1_oj1b4")]
+position = Vector2(72, 128)
+
+[node name="PanelScore" type="Sprite2D" parent="."]
+position = Vector2(73, 50)
+texture = ExtResource("2_fp3jl")
+
+[node name="pic" type="TextureRect" parent="PanelScore"]
+offset_left = -41.5
+offset_top = -4.5
+offset_right = -19.5
+offset_bottom = 17.5
+scale = Vector2(0.78, 0.744266)
+texture = ExtResource("4_u15tk")
+
+[node name="score" type="TextureRect" parent="PanelScore"]
+offset_left = 32.0
+offset_top = -12.5
+offset_right = 72.0
+offset_bottom = 10.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_c6evo")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="best" type="TextureRect" parent="PanelScore"]
+offset_left = 33.5
+offset_top = 9.5
+offset_right = 73.5
+offset_bottom = 32.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_c6evo")
+stretch_mode = 2
+
+[node name="ranking" type="TextureButton" parent="."]
+offset_left = 48.0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 119.0
+texture_normal = ExtResource("4_aotj2")
+texture_pressed = ExtResource("3_6hn1m")
+
+[node name="menu" type="TextureButton" parent="."]
+offset_left = 22.0
+offset_top = 140.0
+offset_right = 62.0
+offset_bottom = 154.0
+texture_normal = ExtResource("5_dsvyr")
+
+[node name="share" type="TextureButton" parent="."]
+offset_left = 84.0
+offset_top = 140.0
+offset_right = 124.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jjoe6")
+
+[connection signal="button_up" from="ranking" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="menu" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="share" to="." method="_on_texture_button_button_up"]
